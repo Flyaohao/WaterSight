@@ -1,0 +1,43 @@
+server:
+  port: 9090
+
+# 数据库配置
+# 通过环境变量注入，未设置时使用下方默认值（默认值仅供本地开发参考，请按需修改）
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}          # 数据库用户名
+    password: ${DB_PASSWORD:root}          # 数据库密码
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:mypuredb}?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8&allowPublicKeyRetrieval=true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+# 配置mybatis实体和xml映射
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+# 分页
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+# 对外暴露的服务地址（上传文件访问、算法服务转发等）
+ip: ${SERVICE_HOST:localhost}
+
+# Python 算法服务地址，与各子服务默认端口对应
+fastapi:
+  url: http://${SERVICE_HOST:localhost}:8000   # 目标识别（YOLOv5）
+enhance:
+  url: http://${SERVICE_HOST:localhost}:8002   # 图像增强
+dataset:
+  url: http://${SERVICE_HOST:localhost}:8001   # 数据集生成（CycleGAN）

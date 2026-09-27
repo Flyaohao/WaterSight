@@ -1,0 +1,354 @@
+:root {
+  /* 基础色彩 - 亮色主题 */
+  --primary-color: #1976d2; /* 更鲜明的主色调 */
+  --primary-color-light: #bbdefb; /* 浅色主色调 */
+  --primary-color-dark: #0d47a1; /* 深色主色调 */
+  --primary-color-alpha: rgba(25, 118, 210, 0.1); /* 半透明主色调 */
+  --primary-shadow: rgba(25, 118, 210, 0.2); /* 主色调阴影 */
+  --primary-shadow-hover: rgba(25, 118, 210, 0.3); /* 主色调悬停阴影 */
+
+  --success-color: #4caf50; /* 成功色 */
+  --success-color-light: #c8e6c9; /* 浅色成功色 */
+  --success-color-hover: #388e3c; /* 悬停成功色 */
+  --success-color-alpha: rgba(76, 175, 80, 0.1); /* 半透明成功色 */
+
+  --danger-color: #f44336; /* 危险色 */
+  --danger-color-light: #ffcdd2; /* 浅色危险色 */
+  --danger-color-hover: #d32f2f; /* 悬停危险色 */
+  --danger-color-alpha: rgba(244, 67, 54, 0.1); /* 半透明危险色 */
+
+  --warning-color: #ff9800; /* 警告色 */
+  --warning-color-light: #ffe0b2; /* 浅色警告色 */
+  --warning-color-hover: #f57c00; /* 悬停警告色 */
+  --warning-color-alpha: rgba(255, 152, 0, 0.1); /* 半透明警告色 */
+
+  --info-color: #2196f3; /* 信息色 */
+  --info-color-light: #b3e5fc; /* 浅色信息色 */
+  --info-color-hover: #0288d1; /* 悬停信息色 */
+  --info-color-alpha: rgba(33, 150, 243, 0.1); /* 半透明信息色 */
+
+  /* 背景色 - 亮色主题 */
+  --bg-color: #f5f7fa; /* 主背景色 */
+  --bg-color-secondary: #ffffff; /* 次级背景色 */
+  --bg-color-tertiary: #f0f2f5; /* 第三级背景色 */
+  --bg-color-hover: #ebf1f6; /* 悬停背景色 */
+  --bg-color-active: #e0e7ff; /* 激活背景色 */
+  --bg-color-alpha: rgba(245, 247, 250, 0.95); /* 半透明背景色 */
+
+  /* 文本色 - 亮色主题 */
+  --text-color-primary: #303133; /* 主文本色 */
+  --text-color-secondary: #606266; /* 次级文本色 */
+  --text-color-regular: #909399; /* 常规文本色 */
+  --text-color-placeholder: #c0c4cc; /* 占位符文本色 */
+  --text-color-disabled: #c0c4cc; /* 禁用文本色 */
+  --white: #ffffff; /* 白色 */
+
+  /* 边框 - 亮色主题 */
+  --border-color: #dcdfe6; /* 主边框色 */
+  --border-color-light: #e4e7ed; /* 浅色边框 */
+  --border-color-lighter: #ebeef5; /* 更浅色边框 */
+  --border-color-active: #1976d2; /* 激活边框色 */
+
+  /* 阴影 - 亮色主题 */
+  --shadow-color: rgba(0, 0, 0, 0.05); /* 阴影色 */
+  --shadow-color-hover: rgba(0, 0, 0, 0.1); /* 悬停阴影色 */
+  --card-shadow: 0 2px 10px var(--shadow-color); /* 卡片阴影 */
+  --card-shadow-hover: 0 4px 18px var(--shadow-color-hover); /* 悬停卡片阴影 */
+
+  /* 特殊组件样式 - 亮色主题 */
+  --code-bg-color: #f5f7fa; /* 代码背景色 */
+  --code-text-color: #476582; /* 代码文本色 */
+  --blockquote-bg-color: #f5f7fa; /* 引用块背景色 */
+
+  /* 渐变 - 亮色主题 */
+  --bg-gradient-light: rgba(235, 245, 255, 0.8); /* 背景渐变浅色 */
+  --bg-gradient-dark: rgba(198, 228, 255, 0.7); /* 背景渐变深色 */
+}
+
+body.dark {
+  /* 基础色彩 - 暗色主题 */
+  --primary-color: #42a5f5; /* 更亮的主色调以增强对比度 */
+  --primary-color-light: #2c3e50; /* 暗色主题的浅色主色调 */
+  --primary-color-dark: #1976d2; /* 暗色主题的深色主色调 */
+  --primary-color-alpha: rgba(66, 165, 245, 0.15); /* 半透明主色调 */
+  --primary-shadow: rgba(66, 165, 245, 0.2); /* 主色调阴影 */
+  --primary-shadow-hover: rgba(66, 165, 245, 0.3); /* 主色调悬停阴影 */
+
+  --success-color: #81c784; /* 暗色主题成功色 */
+  --success-color-light: #263d32; /* 暗色主题浅色成功色 */
+  --success-color-hover: #66bb6a; /* 暗色主题悬停成功色 */
+  --success-color-alpha: rgba(129, 199, 132, 0.15); /* 半透明成功色 */
+
+  --danger-color: #e57373; /* 暗色主题危险色 */
+  --danger-color-light: #3d2c2c; /* 暗色主题浅色危险色 */
+  --danger-color-hover: #ef5350; /* 暗色主题悬停危险色 */
+  --danger-color-alpha: rgba(229, 115, 115, 0.15); /* 半透明危险色 */
+
+  --warning-color: #ffb74d; /* 暗色主题警告色 */
+  --warning-color-light: #3d3426; /* 暗色主题浅色警告色 */
+  --warning-color-hover: #ffa726; /* 暗色主题悬停警告色 */
+  --warning-color-alpha: rgba(255, 183, 77, 0.15); /* 半透明警告色 */
+
+  --info-color: #64b5f6; /* 暗色主题信息色 */
+  --info-color-light: #2a3c4d; /* 暗色主题浅色信息色 */
+  --info-color-hover: #42a5f5; /* 暗色主题悬停信息色 */
+  --info-color-alpha: rgba(100, 181, 246, 0.15); /* 半透明信息色 */
+
+  /* 背景色 - 暗色主题 */
+  --bg-color: #121212; /* 主背景色 - 深色但不是纯黑 */
+  --bg-color-secondary: #1e1e1e; /* 次级背景色 */
+  --bg-color-tertiary: #2a2a2a; /* 第三级背景色 */
+  --bg-color-hover: #333333; /* 悬停背景色 */
+  --bg-color-active: #3f3f3f; /* 激活背景色 */
+  --bg-color-alpha: rgba(18, 18, 18, 0.95); /* 半透明背景色 */
+
+  /* 文本色 - 暗色主题 */
+  --text-color-primary: #eeeeee; /* 主文本色 - 提高对比度但不是纯白 */
+  --text-color-secondary: #b0b0b0; /* 次级文本色 */
+  --text-color-regular: #909090; /* 常规文本色 */
+  --text-color-placeholder: #606060; /* 占位符文本色 */
+  --text-color-disabled: #606060; /* 禁用文本色 */
+  --white: #ffffff; /* 保持白色不变 */
+
+  /* 边框 - 暗色主题 */
+  --border-color: #3f3f3f; /* 主边框色 */
+  --border-color-light: #494949; /* 浅色边框 */
+  --border-color-lighter: #555555; /* 更浅色边框 */
+  --border-color-active: #42a5f5; /* 激活边框色 */
+
+  /* 阴影 - 暗色主题 */
+  --shadow-color: rgba(0, 0, 0, 0.3); /* 阴影色 */
+  --shadow-color-hover: rgba(0, 0, 0, 0.5); /* 悬停阴影色 */
+  --card-shadow: 0 2px 10px var(--shadow-color); /* 卡片阴影 */
+  --card-shadow-hover: 0 4px 18px var(--shadow-color-hover); /* 悬停卡片阴影 */
+
+  /* 特殊组件样式 - 暗色主题 */
+  --code-bg-color: #2a2a2a; /* 代码背景色 */
+  --code-text-color: #a6d4ff; /* 代码文本色 - 提高对比度 */
+  --blockquote-bg-color: #2a2a2a; /* 引用块背景色 */
+
+  /* 渐变 - 暗色主题 */
+  --bg-gradient-light: rgba(20, 30, 40, 0.8); /* 背景渐变浅色 */
+  --bg-gradient-dark: rgba(10, 20, 30, 0.7); /* 背景渐变深色 */
+}
+
+/* 全局过渡动画 */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fade-transition,
+.el-button,
+.el-card,
+.el-input__inner,
+.el-link {
+  transition: all 0.3s ease;
+}
+
+/* 应用主题变量到常见元素 */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color-primary);
+}
+
+a {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color-dark);
+}
+
+/* Element UI 组件主题覆盖 */
+.el-card {
+  background-color: var(--bg-color-secondary);
+  border-color: var(--border-color);
+  color: var(--text-color-primary);
+  box-shadow: var(--card-shadow);
+}
+
+.el-card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.el-button {
+  &:not(.el-button--primary):not(.el-button--success):not(
+      .el-button--warning
+    ):not(.el-button--danger):not(.el-button--info) {
+    background-color: var(--bg-color-secondary);
+    border-color: var(--border-color);
+    color: var(--text-color-primary);
+
+    &:hover,
+    &:focus {
+      background-color: var(--bg-color-hover);
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+  }
+}
+
+.el-button--primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+
+  &:hover,
+  &:focus {
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+  }
+}
+
+.el-button--success {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+
+  &:hover,
+  &:focus {
+    background-color: var(--success-color-hover);
+    border-color: var(--success-color-hover);
+  }
+}
+
+.el-button--danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+
+  &:hover,
+  &:focus {
+    background-color: var(--danger-color-hover);
+    border-color: var(--danger-color-hover);
+  }
+}
+
+.el-button--warning {
+  background-color: var(--warning-color);
+  border-color: var(--warning-color);
+
+  &:hover,
+  &:focus {
+    background-color: var(--warning-color-hover);
+    border-color: var(--warning-color-hover);
+  }
+}
+
+.el-input__inner {
+  background-color: var(--bg-color-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-color-primary);
+
+  &:hover,
+  &:focus {
+    border-color: var(--primary-color);
+  }
+}
+
+.el-input__inner::placeholder {
+  color: var(--text-color-placeholder);
+}
+
+.el-dialog {
+  background-color: var(--bg-color-secondary);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+
+  .el-dialog__title {
+    color: var(--text-color-primary);
+  }
+
+  .el-dialog__body {
+    color: #232323;
+  }
+}
+
+.el-table {
+  background-color: var(--bg-color-secondary);
+  color: var(--text-color-primary);
+
+  th,
+  td {
+    background-color: var(--bg-color-secondary);
+    border-bottom-color: var(--border-color);
+  }
+
+  tr:hover > td {
+    background-color: var(--bg-color-hover);
+  }
+
+  .el-table__header-wrapper th {
+    background-color: var(--bg-color-tertiary);
+    color: var(--text-color-primary);
+  }
+}
+
+.el-tabs__item {
+  color: var(--text-color-secondary);
+
+  &.is-active {
+    color: var(--primary-color);
+  }
+
+  &:hover {
+    color: var(--primary-color-dark);
+  }
+}
+
+.el-tabs__active-bar {
+  background-color: var(--primary-color);
+}
+
+.el-tabs__nav-wrap::after {
+  background-color: var(--border-color);
+}
+
+.el-dropdown-menu {
+  background-color: var(--bg-color-secondary);
+  border-color: var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+.el-dropdown-menu__item {
+  color: var(--text-color-primary);
+
+  &:hover {
+    background-color: var(--bg-color-hover);
+    color: var(--primary-color);
+  }
+}
+
+.el-tag {
+  background-color: var(--bg-color-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-color-secondary);
+
+  &.el-tag--primary {
+    background-color: var(--primary-color-alpha);
+    border-color: var(--primary-color-light);
+    color: var(--primary-color);
+  }
+
+  &.el-tag--success {
+    background-color: var(--success-color-alpha);
+    border-color: var(--success-color-light);
+    color: var(--success-color);
+  }
+
+  &.el-tag--warning {
+    background-color: var(--warning-color-alpha);
+    border-color: var(--warning-color-light);
+    color: var(--warning-color);
+  }
+
+  &.el-tag--danger {
+    background-color: var(--danger-color-alpha);
+    border-color: var(--danger-color-light);
+    color: var(--danger-color);
+  }
+
+  &.el-tag--info {
+    background-color: var(--info-color-alpha);
+    border-color: var(--info-color-light);
+    color: var(--info-color);
+  }
+}

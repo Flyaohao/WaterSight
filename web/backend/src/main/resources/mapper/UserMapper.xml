@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+
+
+    <insert id="insert">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="username != null">username,</if>
+            <if test="password != null">password,</if>
+            <if test="name != null">name,</if>
+            <if test="phone != null">phone,</if>
+            <if test="email != null">email,</if>
+            <if test="avatar != null">avatar,</if>
+            <if test="role != null">role,</if>
+            <if test="sex != null">sex,</if>
+            <if test="info != null">info,</if>
+            <if test="birth != null">birth,</if>
+            <if test="browseRole != null">browse_role,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="username != null">#{username},</if>
+            <if test="password != null">#{password},</if>
+            <if test="name != null">#{name},</if>
+            <if test="phone != null">#{phone},</if>
+            <if test="email != null">#{email},</if>
+            <if test="avatar != null">#{avatar},</if>
+            <if test="role != null">#{role},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="info != null">#{info},</if>
+            <if test="birth != null">#{birth},</if>
+            <if test="browseRole != null">#{browseRole},</if>
+        </trim>
+    </insert>
+
+    <update id="updateById">
+        update user
+        <set>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="avatar != null">
+                avatar = #{avatar},
+            </if>
+            <if test="role != null">
+                role = #{role},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="info != null">
+                info = #{info},
+            </if>
+            <if test="birth != null">
+                birth = #{birth},
+            </if>
+            <if test="blogCount != null">
+                blog_count = #{blogCount},
+            </if>
+            <if test="likesCount != null">
+                likes_count = #{likesCount},
+            </if>
+            <if test="collectCount != null">
+                collect_count = #{collectCount},
+            </if>
+            <if test="browseRole != null">
+                browse_role = #{browseRole},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from user where id = #{id}
+    </delete>
+
+    <select id="selectByUsername" resultType="com.example.entity.User">
+        select * from user where username = #{username}
+    </select>
+
+    <select id="selectById" resultType="com.example.entity.User">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="com.example.entity.User">
+        select * from user
+        <where>
+            <if test="username != null"> and username like concat('%', #{username}, '%')</if>
+            <if test="name != null"> and name like concat('%', #{name}, '%')</if>
+        </where>
+        order by id desc
+    </select>
+
+    <!-- 增加用户的博客数量 -->
+    <update id="increaseBlogCount">
+        update user set blog_count = IFNULL(blog_count, 0) + 1 where id = #{userId}
+    </update>
+
+    <!-- 减少用户的博客数量 -->
+    <update id="decreaseBlogCount">
+        update user set blog_count = GREATEST(IFNULL(blog_count, 0) - 1, 0) where id = #{userId}
+    </update>
+
+    <!-- 增加用户的点赞数量 -->
+    <update id="increaseLikesCount">
+        update user set likes_count = IFNULL(likes_count, 0) + 1 where id = #{userId}
+    </update>
+
+    <!-- 减少用户的点赞数量 -->
+    <update id="decreaseLikesCount">
+        update user set likes_count = GREATEST(IFNULL(likes_count, 0) - 1, 0) where id = #{userId}
+    </update>
+
+    <!-- 增加用户的收藏数量 -->
+    <update id="increaseCollectCount">
+        update user set collect_count = IFNULL(collect_count, 0) + 1 where id = #{userId}
+    </update>
+
+    <!-- 减少用户的收藏数量 -->
+    <update id="decreaseCollectCount">
+        update user set collect_count = GREATEST(IFNULL(collect_count, 0) - 1, 0) where id = #{userId}
+    </update>
+
+    <!-- 更新用户的博客数量 -->
+    <update id="updateBlogCount">
+        UPDATE user u SET u.blog_count = (
+            SELECT COUNT(*) FROM blog b WHERE b.user_id = u.id
+        );
+    </update>
+
+    <!-- 更新用户的获赞数量（这个可能需要调整，取决于您的数据结构） -->
+    <update id="updateLikesCount">
+        UPDATE user u SET u.likes_count = (
+            SELECT COUNT(*) FROM likes l 
+            JOIN blog b ON l.fid = b.id 
+            WHERE l.module = '博客' AND b.user_id = u.id
+        );
+    </update>
+
+    <!-- 更新用户的被收藏数量 -->
+    <update id="updateCollectCount">
+        UPDATE user u SET u.collect_count = (
+            SELECT COUNT(*) FROM collect c 
+            JOIN blog b ON c.fid = b.id 
+            WHERE c.module = '博客' AND b.user_id = u.id
+        );
+    </update>
+
+    <!-- 根据用户真实姓名搜索 -->
+    <select id="searchByName" resultType="com.example.entity.User">
+        select * from user 
+        where BINARY name like concat('%', #{keyword}, '%')
+           or BINARY username like concat('%', #{keyword}, '%')
+        order by id desc
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.TagMapper">
+    <select id="selectHotTags" resultType="java.util.Map">
+        SELECT c.name, COUNT(b.id) as blogCount
+        FROM category c
+        LEFT JOIN blog b ON c.id = b.category_id
+        GROUP BY c.id
+        ORDER BY blogCount DESC
+        LIMIT #{limit}
+    </select>
+</mapper>

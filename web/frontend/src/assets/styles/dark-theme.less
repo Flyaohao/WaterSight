@@ -1,0 +1,284 @@
+// 暗色主题变量
+@dark-bg: #1a1a1a;
+@dark-secondary-bg: #2d2d2d;
+@dark-border: #3a3a3a;
+@dark-text: #e0e0e0;
+@dark-secondary-text: #a0a0a0;
+@dark-hover: #363636;
+@dark-active: #404040;
+
+// 应用暗色主题
+.dark {
+  // 全局背景和文字
+  background-color: @dark-bg;
+  color: @dark-text;
+
+  // Element UI 组件覆盖
+  .el-card {
+    background-color: @dark-secondary-bg;
+    border-color: @dark-border;
+    color: @dark-text;
+  }
+
+  .el-button {
+    &--default {
+      background-color: @dark-secondary-bg;
+      border-color: @dark-border;
+      color: @dark-text;
+
+      &:hover {
+        background-color: @dark-hover;
+      }
+    }
+  }
+
+  .el-input__inner {
+    background-color: @dark-secondary-bg;
+    border-color: @dark-border;
+    color: @dark-text;
+
+    &::placeholder {
+      color: @dark-secondary-text;
+    }
+  }
+
+  .el-table {
+    background-color: @dark-secondary-bg;
+    color: @dark-text;
+
+    th,
+    td {
+      background-color: @dark-secondary-bg;
+      border-color: @dark-border;
+    }
+
+    tr:hover > td {
+      background-color: @dark-hover;
+    }
+  }
+
+  .el-pagination {
+    background-color: @dark-secondary-bg;
+    color: @dark-text;
+
+    button {
+      background-color: @dark-secondary-bg;
+      color: @dark-text;
+    }
+
+    .el-pager li {
+      background-color: @dark-secondary-bg;
+      color: @dark-text;
+
+      &.active {
+        color: #409eff;
+      }
+    }
+  }
+
+  // 自定义组件样式
+  .activity-card {
+    background-color: @dark-secondary-bg;
+    border-color: @dark-border;
+
+    .card-content {
+      background-color: @dark-secondary-bg;
+    }
+
+    .activity-title {
+      color: @dark-text;
+    }
+
+    .activity-time {
+      color: @dark-secondary-text;
+    }
+  }
+
+  .blog-card {
+    background-color: @dark-secondary-bg;
+    border-color: @dark-border;
+
+    .blog-title {
+      color: @dark-text;
+    }
+
+    .blog-desc {
+      color: @dark-secondary-text;
+    }
+  }
+
+  .search-box {
+    background-color: @dark-secondary-bg;
+    border-color: @dark-border;
+
+    .search-input {
+      background-color: @dark-secondary-bg;
+      color: @dark-text;
+
+      &::placeholder {
+        color: @dark-secondary-text;
+      }
+    }
+  }
+
+  // 导航和菜单
+  .el-menu {
+    background-color: @dark-secondary-bg;
+    border-color: @dark-border;
+
+    .el-menu-item {
+      color: @dark-text;
+
+      &:hover {
+        background-color: @dark-hover;
+      }
+
+      &.is-active {
+        background-color: @dark-active;
+      }
+    }
+  }
+
+  // 弹窗
+  .el-dialog {
+    background-color: @dark-secondary-bg;
+
+    .el-dialog__title {
+      color: @dark-text;
+    }
+
+    .el-dialog__body {
+      color: @dark-text;
+    }
+  }
+
+  // 表单
+  .el-form-item__label {
+    color: @dark-text;
+  }
+
+  // 下拉菜单
+  .el-dropdown-menu {
+    background-color: @dark-secondary-bg;
+    border-color: @dark-border;
+
+    .el-dropdown-menu__item {
+      color: @dark-text;
+
+      &:hover {
+        background-color: @dark-hover;
+      }
+    }
+  }
+
+  // 标签
+  .el-tag {
+    background-color: @dark-hover;
+    border-color: @dark-border;
+    color: @dark-text;
+  }
+
+  // 活动中心页面样式
+  .activity-page {
+    background-color: @dark-bg;
+
+    .page-header {
+      background: linear-gradient(
+        135deg,
+        darken(@dark-bg, 5%) 0%,
+        @dark-secondary-bg 100%
+      );
+    }
+
+    .filter-container {
+      background-color: @dark-secondary-bg;
+      border-color: @dark-border;
+
+      .search-box {
+        background-color: darken(@dark-secondary-bg, 5%);
+        input {
+          color: @dark-text;
+          &::placeholder {
+            color: @dark-secondary-text;
+          }
+        }
+      }
+
+      .filter-tag {
+        background-color: darken(@dark-secondary-bg, 5%);
+        color: @dark-text;
+        &:hover {
+          background-color: @dark-hover;
+        }
+      }
+    }
+
+    .main-content {
+      background-color: @dark-secondary-bg;
+      border-color: @dark-border;
+    }
+
+    .upcoming-activities {
+      background-color: @dark-secondary-bg;
+      border-color: @dark-border;
+      color: @dark-text;
+
+      .upcoming-header {
+        background: linear-gradient(
+          135deg,
+          darken(@dark-bg, 5%) 0%,
+          @dark-secondary-bg 100%
+        );
+        color: @dark-text;
+      }
+
+      .upcoming-item {
+        border-bottom-color: @dark-border;
+
+        &:hover {
+          background-color: @dark-hover;
+        }
+
+        .activity-time {
+          color: #45cafc;
+        }
+
+        .activity-title {
+          color: @dark-text;
+        }
+
+        .activity-location {
+          color: @dark-secondary-text;
+        }
+      }
+    }
+
+    .expand-button {
+      background: linear-gradient(
+        135deg,
+        darken(@dark-bg, 5%) 0%,
+        @dark-secondary-bg 100%
+      );
+      color: @dark-text;
+    }
+
+    .pagination-container {
+      .el-pagination {
+        background-color: @dark-secondary-bg;
+        .btn-prev,
+        .btn-next,
+        .el-pager li {
+          background-color: darken(@dark-secondary-bg, 5%);
+          color: @dark-text;
+          &:hover {
+            color: #45cafc;
+          }
+          &.active {
+            background-color: #45cafc;
+            color: @dark-text;
+          }
+        }
+      }
+    }
+  }
+}

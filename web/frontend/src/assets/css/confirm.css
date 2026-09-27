@@ -1,0 +1,158 @@
+/* 消息框容器 */
+.custom-message-box-wrapper {
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 30px 24px 24px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 8px 32px rgba(10, 36, 99, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 消息框内容布局 */
+.custom-message-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0px;
+    /* 减少顶部内边距，让整体上移 */
+    padding-top: 0px;
+}
+
+/* 图标样式 */
+.message-icon {
+    width: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3e92cc, #64b5f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 减少顶部外边距，让图标上移 */
+    margin-top: 0px;
+}
+
+.message-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+/* 文本内容样式 */
+.message-content {
+    flex: 1;
+    /* 减少顶部外边距，让文本上移 */
+    margin-top: 0px;
+}
+
+.message-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+.message-text {
+    font-size: 14px;
+    color: #5a6c7d;
+    line-height: 1.5;
+}
+
+/* 按钮样式 */
+.custom-confirm-button {
+    background: linear-gradient(135deg, #ff6b35, #ff8659) !important;
+    border: none !important;
+    padding: 12px 18px !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    font-size: 14px !important;
+}
+
+.custom-confirm-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 15px rgba(255, 107, 53, 0.2) !important;
+}
+
+.custom-cancel-button {
+    background: rgba(237, 237, 237, 0.8) !important;
+    backdrop-filter: blur(4px) !important;
+    border: 1px solid rgba(62, 146, 204, 0.2) !important;
+    color: #3e92cc !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    font-size: 14px !important;
+}
+
+/* 去除默认头部 */
+.custom-message-box-wrapper .el-message-box__header {
+    display: none !important;
+}
+
+/* 调整内容区域间距 */
+.custom-message-box-wrapper .el-message-box__content {
+    padding: 1px !important;
+    margin: 2px !important;
+}
+
+/* 调整按钮区域样式 */
+.custom-message-box-wrapper .el-message-box__btns {
+    padding: 20px 0 0 0 !important;
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: flex-end !important;
+}
+
+.custom-message-box-wrapper .el-message-box__btns button {
+    margin: 0 !important;
+}
+
+.custom-message-box .close-btn:hover {
+    background: rgba(62, 146, 204, 0.1);
+    transform: rotate(90deg);
+}
+
+.custom-message-box .close-btn i {
+    font-size: 16px;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.custom-message-box .close-btn:hover i {
+    color: #3e92cc;
+}
+
+.message-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+  }
+  
+  .message-close:hover {
+    transform: rotate(90deg);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+  }
+  
+  .message-close i {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+  }
+
+/* 调整消息框内容的相对位置 */
+.custom-message-box {
+    position: relative;
+}
+
+.message-content {
+    margin-top: 0px;
+}

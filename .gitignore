@@ -1,0 +1,76 @@
+# ---- 构建产物 ----
+target/
+build/
+dist/
+*.class
+*.jar
+*.war
+
+# ---- 依赖目录 ----
+node_modules/
+.pnpm-store/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+*.egg-info/
+
+# ---- 日志与临时文件 ----
+*.log
+*.log.*
+*.tmp
+tempfile_*
+
+# ---- 运行时生成的数据（上传 / 结果 / 缓存，见各服务 app.py）----
+/web/backend/logs/
+/web/files/
+/enhance/static/
+/enhance/result/
+/dataset-gan/static/
+/dataset-gan/static1/
+/dataset-gan/uploads/
+/dataset-gan/test_images/
+/yolo/check/uploads/
+/yolo/check/results/
+
+# ---- 模型权重与训练产物（体积过大，见 README 的「模型权重」一节）----
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+*.weights
+/enhance/checkpoint/
+/dataset-gan/checkpoints/
+/yolo/pretrained/
+/yolo/check/weights/
+runs/
+
+# ---- IDE ----
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.settings/
+.project
+.classpath
+
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 压缩包 ----
+*.zip
+*.rar
+*.7z
+
+# ---- 数据库导出（含明文账号口令，不入库） ----
+database/mypuredb.sql
+*.sql

@@ -1,0 +1,25 @@
+body {
+    /*background-color: #e4e6eb;*/
+    background-image: url("../imgs/bgc3.jpg") ;
+    /*background-repeat: no-repeat;*/
+    background-size: cover; /* 或者使用 contain，根据需要调整 */
+    background-position: center top;
+}
+.el-menu-demo {
+    background-color: #0066bc;
+    display: flex; /* 添加此行 */
+    justify-content: center !important; /* 保持此行 */
+}
+.el-menu-item {
+    color: #fff !important;
+}
+.el-menu-item:hover {
+    background-color: #59aeff !important;
+}
+.el-submenu__title {
+    color: #fff !important;
+}
+
+.el-menu-item.is-active {
+    background-color: #00519a !important;
+}
